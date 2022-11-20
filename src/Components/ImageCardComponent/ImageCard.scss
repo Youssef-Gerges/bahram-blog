@@ -1,0 +1,75 @@
+.large-card {
+    width: 60%;
+}
+
+.small-card {
+    width: 50%;
+}
+
+.image-card {
+    align-items: flex-start;
+    position: relative;
+    cursor: pointer;
+    border-radius: 7px;
+    background-repeat: no-repeat;
+    // overflow: hidden;
+    align-self: stretch;
+    background-size: cover;
+
+    // img {
+    //     border-radius: 7px;
+    //     object-fit: cover;
+    //     height: 100%;
+    //     // align-self: stretch;
+    //     width: 100%;
+    // }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding: 1.5rem 0 1.5rem 2.5rem;
+        // position: absolute;
+        // top: 6.5%;
+        // left: 7%;
+        color: #fff;
+        line-height: 2.2rem;
+        width: 75%;
+
+        .details {
+            text-transform: uppercase;
+            margin-bottom: 15px;
+
+            span {
+                margin: 10px;
+            }
+        }
+
+        .title {
+            width: 80%;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .text {
+        // transform: scale(0.9);
+        top: 3.2% !important;
+        left: 3.5% !important;
+
+        // .title {
+        //     width: 100% !important;
+        // }
+    }
+
+    .large-card {
+        width: 100% !important;
+    }
+
+    .small-card {
+        width: 100% !important;
+    }
+}

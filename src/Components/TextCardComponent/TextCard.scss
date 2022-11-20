@@ -1,0 +1,22 @@
+@import '../../styleUtils/colors';
+
+.text-card {
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    line-height: 2rem;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: $red;
+    }
+
+    .card-title {
+        text-transform: uppercase;
+        color: $passive;
+    }
+}

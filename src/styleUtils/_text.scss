@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'font-bold';
+    src: url('/src/assets/fonts/OpenSans-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'font-semibold';
+    src: url('/src/assets/fonts/OpenSans-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'font-regular';
+    src: url('/src/assets/fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'font-boldItalic';
+    src: url('/src/assets/fonts/OpenSans-BoldItalic.ttf');
+}
+
+@mixin h1-set {
+    font-family: 'font-semibold';
+    font-size: 3em;
+}
+
+@mixin h2-set {
+    font-family: 'font-semibold';
+    font-size: 2.25em;
+}
+
+@mixin h3-set {
+    font-family: 'font-semibold';
+    font-size: 1.75em;
+}
+
+@mixin h4-set {
+    font-family: 'font-semibold';
+    font-size: 1.25em;
+}
+
+@mixin h5-set {
+    font-family: 'font-regular';
+    font-size: 1em;
+}
+
+@mixin h6-set {
+    font-family: 'font-regular';
+    font-size: 0.875em;
+}
+
+@mixin quote-set {
+    // font-family: 'font-boldItalic';
+    font-family: 'font-bold';
+    font-size: 1.5em;
+}
+
+@mixin body-set {
+    font-family: 'font-regular';
+    font-size: 1em;
+}
+
+@mixin title-large-set {
+    font-family: 'font-bold';
+    font-size: 2.25em;
+}
+
+@mixin title-set {
+    font-family: 'font-bold';
+    font-size: 1.5em;
+}
+
+@mixin title-small-set {
+    font-family: 'font-bold';
+    font-size: 1.125em;
+}

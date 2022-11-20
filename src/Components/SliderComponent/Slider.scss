@@ -1,0 +1,27 @@
+.slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    .slides {
+        flex-wrap: nowrap;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        display: flex;
+        gap: 20px;
+        scroll-behavior: smooth;
+    }
+
+    button {
+        cursor: pointer;
+        align-self: stretch;
+        outline: none;
+        background-color: #fff;
+        border: 1px;
+        border-radius: 7px;
+        font-size: 1.1rem;
+        box-shadow: rgba(#000000, 0.1) 0px 1px 5px 0px;
+    }
+}

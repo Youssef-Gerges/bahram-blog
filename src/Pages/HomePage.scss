@@ -1,0 +1,65 @@
+@import '../styleUtils/colors';
+
+.home-page {
+    .hero {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+
+        .new-card {
+            margin-top: 20px;
+            line-height: 2rem;
+
+            .date {
+                color: $passive;
+            }
+
+            .news {
+                text-decoration: none;
+                color: #000;
+
+                &:hover {
+                    color: $red;
+                }
+            }
+        }
+
+    }
+
+    .cards-section {
+        display: flex;
+        gap: 20px;
+
+        .text-cards-container {
+            width: 50%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 15px;
+        }
+    }
+
+    .vertical-cards-container {
+        display: flex;
+        // flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .home-page {
+        .hero {
+            flex-direction: column;
+        }
+
+        .cards-section {
+            flex-direction: column;
+
+            .text-cards-container {
+                width: 100%;
+            }
+        }
+    }
+}

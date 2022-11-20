@@ -1,0 +1,61 @@
+@import './styleUtils/colors';
+@import './styleUtils/text';
+
+body {
+    background-color: $background;
+    @include body-set;
+}
+
+.wrapper {
+    padding: 2rem 5rem 0 5rem;
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+        padding: 1rem 1rem 0 1rem;
+    }
+}
+
+.container {
+    margin: 5rem 0;
+}
+
+h1 {
+    @include h1-set;
+}
+
+h2 {
+    @include h2-set;
+}
+
+h3 {
+    @include h3-set;
+}
+
+h4 {
+    @include h4-set;
+}
+
+h5 {
+    @include h5-set;
+}
+
+h6 {
+    @include h6-set;
+}
+
+.quote {
+    @include quote-set;
+}
+
+.title {
+    @include title-set
+}
+
+.title-large {
+    @include title-large-set
+}
+
+.title-small {
+    @include title-small-set;
+}
