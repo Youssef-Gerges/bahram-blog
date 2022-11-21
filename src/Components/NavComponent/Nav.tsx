@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { AiOutlineSearch, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import Logo from '../../assets/imges/logo.png';
 import './Nav.scss';
@@ -17,24 +17,49 @@ const Nav: React.FC = () => {
     return (
         <div>
             <nav>
-                <Link to={'/'} className='logo'>
+                <NavLink to={'/'} className='logo'>
                     <img src={Logo} alt='logo here' />
-                </Link>
+                </NavLink>
                 <ul className={show ? 'show' : ''}>
                     <li>
-                        <Link to={'/popular'} onClick={closeHandler}>Popular</Link>
+                        <NavLink to={'/popular'}
+                            onClick={closeHandler}
+                            className={({ isActive }) => isActive ? 'active-nav-link' : ''}
+                        >
+                            Popular
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to={'/new'} onClick={closeHandler}>New</Link>
+                        <NavLink to={'/new'}
+                            onClick={closeHandler}
+                            className={({ isActive }) => isActive ? 'active-nav-link' : ''}
+                        >
+                            New
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to={'/reading-list'} onClick={closeHandler}>Reading list</Link>
+                        <NavLink to={'/reading-list'}
+                            onClick={closeHandler}
+                            className={({ isActive }) => isActive ? 'active-nav-link' : ''}
+                        >
+                            Reading list
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to={'topics'} onClick={closeHandler}>Topics</Link>
+                        <NavLink to={'topics'}
+                            onClick={closeHandler}
+                            className={({ isActive }) => isActive ? 'active-nav-link' : ''}
+                        >
+                            Topics
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to={'subscribe'} onClick={closeHandler}>Subscribe</Link>
+                        <NavLink to={'subscribe'}
+                            onClick={closeHandler}
+                            className={({ isActive }) => isActive ? 'active-nav-link' : ''}
+                        >
+                            Subscribe
+                        </NavLink>
                     </li>
                 </ul>
                 <div className="buttons">
