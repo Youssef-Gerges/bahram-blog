@@ -7,13 +7,15 @@ import { HomePage } from './Pages/HomePage';
 import PopularPage from './Pages/PopularPage';
 import NewPage from './Pages/NewPage';
 import ReadingListsPage from './Pages/ReadingListsPage';
+import SubscribtionForm from './Components/SubscribtionFormComponent/SubscribtionForm';
+import TopicsPage from './Pages/TopicsPage';
 
 const App: React.FC = () => {
     const { pathname } = useLocation();
 
     return (
         <div className="App">
-            <div className={`wrapper ${pathname != '/' ? 'white-bg' : ''}`}>
+            <div className={`wrapper ${pathname != '/subscribe' && pathname != '/' ? 'white-bg' : ''}`}>
                 <Nav />
             </div>
             <Routes>
@@ -22,8 +24,8 @@ const App: React.FC = () => {
                 <Route path='/popular/page/t' element={<PopularPage />} />
                 <Route path='/new' element={<NewPage />} />
                 <Route path='/reading-list' element={<ReadingListsPage />} />
-                <Route path='/topics' />
-                <Route path='/subscribe' />
+                <Route path='/topics' element={<TopicsPage />} />
+                <Route path='/subscribe' element={<SubscribtionForm />} />
             </Routes>
 
             <Footer />

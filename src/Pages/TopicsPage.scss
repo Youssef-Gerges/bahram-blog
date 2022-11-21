@@ -1,0 +1,30 @@
+@import '../styleUtils/colors';
+
+.topics-page {
+    .cards-container {
+        margin-top: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+
+        .text-card {
+            transition: color 0.3s ease;
+
+            &:hover {
+                h3 {
+
+                    color: $red;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 920px) {
+    .topics-page {
+        .cards-container {
+            grid-template-columns: 1fr;
+        }
+    }
+}

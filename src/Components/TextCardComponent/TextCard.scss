@@ -9,10 +9,16 @@
     background-color: #fff;
     padding: 20px;
     line-height: 2rem;
-    transition: color 0.2s ease;
 
-    &:hover {
+    h4 {
+
+        transition: color 0.3s ease;
+    }
+
+    &:hover h4 {
+
         color: $red;
+
     }
 
     .card-title {
