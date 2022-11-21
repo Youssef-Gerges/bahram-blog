@@ -5,6 +5,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.scss';
 import { HomePage } from './Pages/HomePage';
 import PopularPage from './Pages/PopularPage';
+import NewPage from './Pages/NewPage';
 
 const App: React.FC = () => {
     const { pathname } = useLocation();
@@ -18,7 +19,7 @@ const App: React.FC = () => {
                 <Route path='/' index element={<HomePage />} />
                 <Route path='/popular' element={<PopularPage />} />
                 <Route path='/popular/page/t' element={<PopularPage />} />
-                <Route path='/new' />
+                <Route path='/new' element={<NewPage />} />
                 <Route path='/reading-list' />
                 <Route path='/topics' />
                 <Route path='/subscribe' />

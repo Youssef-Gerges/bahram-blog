@@ -11,6 +11,7 @@ import PageHeader from '../Components/PageHeaderComponent/PageHeader';
 import { ScrollCard } from '../Components/ScrollCardComponent/ScrollCard';
 import { SectionWrapper } from '../Components/SectionWrapperComponent/SectionWrapper';
 import { Slider } from '../Components/SliderComponent/Slider';
+import SubscribtionForm from '../Components/SubscribtionFormComponent/SubscribtionForm';
 import './PopularPage.scss';
 
 const PopularPage: React.FC = () => {
@@ -96,16 +97,8 @@ const PopularPage: React.FC = () => {
                     </SectionWrapper>
                 </section>
 
-                <section className='container sub-form'>
-                    <h1>Get free web design insights...</h1>
-                    <p className='title-small'>In your inbox, every other week. And unsubscribe in a click, if you want.</p>
-                    <section className='container'>
-                        <div className="input-group">
-                            <input type="email" className="input-email" placeholder='Email' />
-                            <button>Subscribe</button>
-                        </div>
-                    </section>
-                </section>
+                <SubscribtionForm />
+
             </div>
         </div>
     )

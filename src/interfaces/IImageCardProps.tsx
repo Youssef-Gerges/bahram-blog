@@ -4,7 +4,7 @@ export enum CardWidth {
 }
 export default interface IImageCardProps {
     img: string,
-    style?: ElementCSSInlineStyle,
+    style?: object,
     width?: CardWidth
     text: {
         author?: string,

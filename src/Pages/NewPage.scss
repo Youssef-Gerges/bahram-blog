@@ -1,0 +1,54 @@
+@import '../styleUtils/colors';
+
+.new-page {
+
+    .vertical-cards-container {
+        margin-top: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .loadmore-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        #loadmore {
+            font-size: 24px;
+            cursor: pointer;
+            background-color: transparent;
+            padding: 15px;
+            outline: none;
+            border-color: $red;
+            color: $red;
+            border-radius: 50px;
+            transition: all ease 0.3s;
+            font-family: 'font-semibold';
+
+            &:hover {
+                background-color: $red;
+                color: #fff;
+            }
+        }
+    }
+
+
+    .text-cards-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .new-page {
+        .vertical-cards-container {
+            grid-template-columns: 1fr;
+        }
+
+        .text-cards-container {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}

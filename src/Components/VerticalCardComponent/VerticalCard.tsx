@@ -2,9 +2,9 @@ import React from 'react';
 import IImageCardProps from '../../interfaces/IImageCardProps';
 import './VerticalCard.scss';
 
-const VerticalCard: React.FC<IImageCardProps> = ({ img, text }) => {
+const VerticalCard: React.FC<IImageCardProps> = ({ img, text, style }) => {
     return (
-        <div className='vertical-card'>
+        <div className='vertical-card' style={style}>
             <img src={img} alt={text.title} />
             <div className="text" >
                 <p className='details'>By<span>{text.author}</span>in<span>{text.category}</span></p>
