@@ -1,0 +1,43 @@
+@import '../styleUtils/colors';
+
+.reading-lists-page {
+    .cards-container {
+        margin-top: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+
+        .horizental-card {
+            transition: color 0.3s ease;
+
+            .text {
+                padding-top: 0 !important;
+            }
+
+            &:hover {
+                color: $red;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 920px) {
+    .reading-lists-page {
+        .cards-container {
+            grid-template-columns: 1fr;
+        }
+
+        .horizental-card {
+            flex-direction: row-reverse !important;
+            padding-bottom: 0px !important;
+
+            img {
+                align-self: stretch !important;
+                width: 40% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+            }
+        }
+    }
+}

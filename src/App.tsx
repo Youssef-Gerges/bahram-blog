@@ -6,6 +6,7 @@ import './App.scss';
 import { HomePage } from './Pages/HomePage';
 import PopularPage from './Pages/PopularPage';
 import NewPage from './Pages/NewPage';
+import ReadingListsPage from './Pages/ReadingListsPage';
 
 const App: React.FC = () => {
     const { pathname } = useLocation();
@@ -20,7 +21,7 @@ const App: React.FC = () => {
                 <Route path='/popular' element={<PopularPage />} />
                 <Route path='/popular/page/t' element={<PopularPage />} />
                 <Route path='/new' element={<NewPage />} />
-                <Route path='/reading-list' />
+                <Route path='/reading-list' element={<ReadingListsPage />} />
                 <Route path='/topics' />
                 <Route path='/subscribe' />
             </Routes>
