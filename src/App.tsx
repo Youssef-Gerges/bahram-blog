@@ -1,28 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Nav from './Components/NavComponent/Nav';
 import Footer from './Components/FooterComponent/Footer';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.scss';
 import { HomePage } from './Pages/HomePage';
+import PopularPage from './Pages/PopularPage';
 
 const App: React.FC = () => {
+    const { pathname } = useLocation();
+
     return (
         <div className="App">
-            <div className="wrapper">
+            <div className={`wrapper ${pathname != '/' ? 'white-bg' : ''}`}>
                 <Nav />
-
-                <div className="container">
-                    <Routes>
-                        <Route path='/' index element={<HomePage />} />
-                        <Route path='/popular' />
-                        <Route path='/new' />
-                        <Route path='/reading-list' />
-                        <Route path='/topics' />
-                        <Route path='/subscribe' />
-                    </Routes>
-                </div>
-
             </div>
+            <Routes>
+                <Route path='/' index element={<HomePage />} />
+                <Route path='/popular' element={<PopularPage />} />
+                <Route path='/popular/page/t' element={<PopularPage />} />
+                <Route path='/new' />
+                <Route path='/reading-list' />
+                <Route path='/topics' />
+                <Route path='/subscribe' />
+            </Routes>
+
             <Footer />
         </div>
     );

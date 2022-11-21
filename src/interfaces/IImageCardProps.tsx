@@ -7,8 +7,9 @@ export default interface IImageCardProps {
     style?: ElementCSSInlineStyle,
     width?: CardWidth
     text: {
-        author: string,
-        category: string,
+        author?: string,
+        category?: string,
+        number?: string,
         title: string,
         description: string,
     }

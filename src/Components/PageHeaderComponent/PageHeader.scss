@@ -1,0 +1,22 @@
+.page-header {
+    background-color: #fff;
+    padding-bottom: 5rem;
+    line-height: 2rem;
+
+    h2 {
+        margin-bottom: 5rem;
+    }
+
+    h4 {
+        width: 80%;
+    }
+}
+
+
+@media screen and (max-width: 920px) {
+    .page-header {
+        h4 {
+            width: 100%;
+        }
+    }
+}

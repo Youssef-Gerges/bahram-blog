@@ -1,0 +1,18 @@
+@import '../../styleUtils/colors';
+
+.bread-crumb {
+    padding: 3rem 0 2rem 0;
+    text-transform: capitalize;
+
+
+    a {
+        color: $passive;
+        text-decoration: none;
+        display: inline;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $red;
+        }
+    }
+}

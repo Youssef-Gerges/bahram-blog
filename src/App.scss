@@ -6,8 +6,16 @@ body {
     @include body-set;
 }
 
+.white-bg {
+    background-color: #fff !important;
+}
+
 .wrapper {
     padding: 2rem 5rem 0 5rem;
+}
+
+.page {
+    background-color: $background !important;
 }
 
 @media screen and (max-width: 600px) {
@@ -16,7 +24,12 @@ body {
     }
 }
 
-.container {
+div.container {
+    margin-top: 5rem;
+    margin-bottom: 0;
+}
+
+section.container {
     margin: 5rem 0;
 }
 
