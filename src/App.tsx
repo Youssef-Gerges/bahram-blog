@@ -10,13 +10,14 @@ import ReadingListsPage from './Pages/ReadingListsPage';
 import SubscribtionForm from './Components/SubscribtionForm';
 import TopicsPage from './Pages/TopicsPage';
 import SingleBlogPage from './Pages/SingleBlogPage';
+import AuthorPage from './Pages/AuthorPage';
 
 const App: React.FC = () => {
     const { pathname } = useLocation();
 
     return (
         <div className="App">
-            <div className={`wrapper ${pathname != '/subscribe' && pathname != '/' ? 'white-bg' : ''}`}>
+            <div className={`wrapper ${pathname != '/subscribe' && pathname != '/author' && pathname != '/' ? 'white-bg' : ''}`}>
                 <Nav />
             </div>
             <Routes>
@@ -28,6 +29,7 @@ const App: React.FC = () => {
                 <Route path='/topics' element={<TopicsPage />} />
                 <Route path='/subscribe' element={<SubscribtionForm />} />
                 <Route path='/single-blog' element={<SingleBlogPage />} />
+                <Route path='/author' element={<AuthorPage />} />
             </Routes>
 
             <Footer />

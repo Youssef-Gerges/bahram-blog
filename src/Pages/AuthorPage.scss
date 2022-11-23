@@ -1,0 +1,172 @@
+@import '../styleUtils/colors';
+
+.author-page {
+    .page-layout {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        .card {
+            background-color: #fff;
+            border-radius: 7px;
+            box-shadow: rgba(#000000, 0.1) 0px 1px 5px 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 20px;
+            width: max-content;
+
+            .author-details {
+                padding: 3rem;
+                line-height: 1.7rem;
+
+                img {
+                    margin-bottom: 1rem;
+                }
+
+                .social-container {
+                    margin-top: 1rem;
+                    display: flex;
+                    gap: 10px;
+                    font-size: 2rem;
+
+                    svg {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .paginator {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                button {
+                    background-color: #fff;
+                    outline: none;
+                    border-radius: 50px;
+                    padding: 15px 25px;
+                    border-color: transparent;
+                    font-size: 18px;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $red;
+                        color: #fff;
+                    }
+                }
+
+                button.active {
+                    background-color: $purple;
+                    color: #fff;
+                }
+            }
+        }
+
+        .side {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 10px;
+
+            .search {
+                align-items: stretch;
+                padding: 2rem;
+
+                .search-group {
+                    display: flex;
+
+                    svg {
+                        font-size: 20px;
+                        cursor: pointer;
+                    }
+
+                    input {
+                        font-size: 14px;
+                        border: none;
+                        outline: none;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .card-header {
+                padding: 2rem 0;
+            }
+
+            .popular-posts,
+            .recent-posts {
+                padding: 0 2rem 2rem 2rem;
+                // gap: 5px;
+                align-items: stretch;
+            }
+
+            .popular-posts .horizental-card img {
+                object-fit: contain;
+            }
+
+            .popular-posts .horizental-card .text {
+                flex-direction: column-reverse;
+                padding-right: 0;
+                padding-left: 1.5rem;
+
+                h3 {
+                    font-family: 'font-semibold';
+                    font-size: 16px;
+                    width: 100%;
+                }
+            }
+
+            .category-filter {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+
+                .category {
+                    background-color: #fff;
+                    padding: 10px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    transition: all ease 0.3s;
+
+                    &:hover {
+                        color: #fff;
+                        background-color: $red;
+                    }
+
+                }
+
+                .category.active {
+                    color: #fff;
+                    background-color: $purple;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .page-layout {
+        flex-direction: column;
+
+        .content {
+            width: 100% !important;
+        }
+
+        .side {
+            width: 100% !important;
+
+            .horizental-card img {
+                width: 40% !important;
+            }
+        }
+    }
+}

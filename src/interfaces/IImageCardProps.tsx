@@ -11,6 +11,6 @@ export default interface IImageCardProps {
         category?: string,
         number?: string,
         title: string,
-        description: string,
+        description?: string,
     }
 }
