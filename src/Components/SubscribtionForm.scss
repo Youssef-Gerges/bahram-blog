@@ -1,4 +1,4 @@
-@import '../../styleUtils/colors';
+@import '../styleUtils/colors';
 
 .sub-form {
     display: flex;
@@ -42,5 +42,10 @@
         color: #fff;
         padding: 15px;
         margin-left: -50px;
+        transition: background-color ease 0.3s;
+
+        &:hover {
+            background-color: $purple;
+        }
     }
 }

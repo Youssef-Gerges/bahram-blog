@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../assets/imges/logoGray.png';
+import Logo from '../assets/imges/logoGray.png';
 import { FaFacebook, FaPinterest, } from 'react-icons/fa';
 import { AiFillTwitterCircle } from 'react-icons/ai';
 import './Footer.scss';

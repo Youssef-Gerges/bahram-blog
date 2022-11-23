@@ -1,5 +1,5 @@
 import React from 'react';
-import IImageCardProps from '../../interfaces/IImageCardProps';
+import IImageCardProps from '../interfaces/IImageCardProps';
 import './VerticalCard.scss';
 
 const VerticalCard: React.FC<IImageCardProps> = ({ img, text, style }) => {

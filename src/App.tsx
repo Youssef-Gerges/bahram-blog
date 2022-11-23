@@ -1,14 +1,15 @@
-import React, { useEffect } from 'react';
-import Nav from './Components/NavComponent/Nav';
-import Footer from './Components/FooterComponent/Footer';
+import React from 'react';
+import Nav from './Components/Nav';
+import Footer from './Components/Footer';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.scss';
 import { HomePage } from './Pages/HomePage';
 import PopularPage from './Pages/PopularPage';
 import NewPage from './Pages/NewPage';
 import ReadingListsPage from './Pages/ReadingListsPage';
-import SubscribtionForm from './Components/SubscribtionFormComponent/SubscribtionForm';
+import SubscribtionForm from './Components/SubscribtionForm';
 import TopicsPage from './Pages/TopicsPage';
+import SingleBlogPage from './Pages/SingleBlogPage';
 
 const App: React.FC = () => {
     const { pathname } = useLocation();
@@ -26,6 +27,7 @@ const App: React.FC = () => {
                 <Route path='/reading-list' element={<ReadingListsPage />} />
                 <Route path='/topics' element={<TopicsPage />} />
                 <Route path='/subscribe' element={<SubscribtionForm />} />
+                <Route path='/single-blog' element={<SingleBlogPage />} />
             </Routes>
 
             <Footer />

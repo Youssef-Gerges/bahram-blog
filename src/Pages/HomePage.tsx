@@ -12,14 +12,14 @@ import VCard1Img from '../assets/imges/Card-1.png';
 import VCard2Img from '../assets/imges/Card2.png';
 import horizontalImg from '../assets/imges/horizontal.png';
 import { CardWidth } from '../interfaces/IImageCardProps';
-import { ImageCard } from '../Components/ImageCardComponent/ImageCard';
-import { ScrollCard } from '../Components/ScrollCardComponent/ScrollCard';
-import { SectionWrapper } from '../Components/SectionWrapperComponent/SectionWrapper';
-import { Slider } from '../Components/SliderComponent/Slider';
+import { ImageCard } from '../Components/ImageCard';
+import { ScrollCard } from '../Components/ScrollCard';
+import { SectionWrapper } from '../Components/SectionWrapper';
+import { Slider } from '../Components/Slider';
 import './HomePage.scss';
-import { TextCard } from '../Components/TextCardComponent/TextCard';
-import { HorizentalCard } from '../Components/HorizentalCardComponent/HorizentalCard';
-import VerticalCard from '../Components/VerticalCardComponent/VerticalCard';
+import { TextCard } from '../Components/TextCard';
+import { HorizentalCard } from '../Components/HorizentalCard';
+import VerticalCard from '../Components/VerticalCard';
 
 
 export const HomePage: React.FC = () => {

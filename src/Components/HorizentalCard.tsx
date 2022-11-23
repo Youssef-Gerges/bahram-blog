@@ -1,6 +1,6 @@
 import React from 'react';
 import './HorizentalCard.scss';
-import IImageCardProps from '../../interfaces/IImageCardProps';
+import IImageCardProps from '../interfaces/IImageCardProps';
 
 export const HorizentalCard: React.FC<IImageCardProps> = ({ img, text, style }) => {
     return (

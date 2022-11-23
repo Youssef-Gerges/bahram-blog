@@ -1,14 +1,14 @@
 import React from 'react'
-import BreadCrumb from '../Components/BreadCrumbComponent/BreadCrumb'
-import PageHeader from '../Components/PageHeaderComponent/PageHeader'
-import VerticalCard from '../Components/VerticalCardComponent/VerticalCard'
+import BreadCrumb from '../Components/BreadCrumb'
+import PageHeader from '../Components/PageHeader'
+import VerticalCard from '../Components/VerticalCard'
 import VCard1Img from '../assets/imges/Card-1.png';
 import VCard2Img from '../assets/imges/Card2.png';
 import './NewPage.scss'
-import { SectionWrapper } from '../Components/SectionWrapperComponent/SectionWrapper';
-import { TextCard } from '../Components/TextCardComponent/TextCard';
+import { SectionWrapper } from '../Components/SectionWrapper';
+import { TextCard } from '../Components/TextCard';
 import { FcDocument } from 'react-icons/fc'
-import SubscribtionForm from '../Components/SubscribtionFormComponent/SubscribtionForm';
+import SubscribtionForm from '../Components/SubscribtionForm';
 
 
 const NewPage: React.FC = () => {

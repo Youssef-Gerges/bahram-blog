@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AiOutlineSearch, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-import Logo from '../../assets/imges/logo.png';
+import Logo from '../assets/imges/logo.png';
 import './Nav.scss';
 
 const Nav: React.FC = () => {

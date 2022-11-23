@@ -1,6 +1,6 @@
 import React from 'react';
 import './ImageCard.scss';
-import IImageCardProps, { CardWidth } from '../../interfaces/IImageCardProps';
+import IImageCardProps, { CardWidth } from '../interfaces/IImageCardProps';
 
 export const ImageCard: React.FC<IImageCardProps> = ({ text, img, width }) => {
 

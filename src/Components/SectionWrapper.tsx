@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ISelectionWrapperProps from '../../interfaces/ISelectionWrapperProps';
+import ISelectionWrapperProps from '../interfaces/ISelectionWrapperProps';
 import './SectionWrapper.scss'
 
 export const SectionWrapper: React.FC<ISelectionWrapperProps> = ({ title, link, separator, children, width, titleCName }) => {

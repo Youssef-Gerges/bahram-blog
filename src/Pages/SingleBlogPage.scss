@@ -1,0 +1,89 @@
+@import '../styleUtils/colors';
+
+.single-blog-page {
+    .page-header {
+        padding-bottom: 0 !important;
+
+        h4 {
+            width: 100%;
+        }
+    }
+
+    .header {
+        p {
+            margin-top: 2rem;
+            color: $passive;
+            text-transform: uppercase;
+
+            a {
+                text-decoration: none;
+                color: #000;
+                transition: color ease 0.3s;
+
+                &:hover {
+                    color: $red;
+                }
+            }
+        }
+
+        padding-bottom: 5rem;
+    }
+
+    .blog {
+        margin-top: 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 40px;
+
+        .social-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+            font-size: 2rem;
+
+            svg {
+                cursor: pointer;
+            }
+        }
+
+        .blog-content {
+            line-height: 2rem;
+        }
+
+        .view-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.1rem;
+            word-wrap: normal;
+
+
+            svg {
+                font-size: 1.6rem;
+                margin-bottom: 5px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 920px) {
+    .single-blog-page {
+        .blog {
+            flex-direction: column;
+            align-items: center;
+
+            .social-container {
+                flex-direction: row;
+            }
+
+            .view-details {
+                flex-direction: row;
+            }
+        }
+    }
+}

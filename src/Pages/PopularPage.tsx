@@ -5,13 +5,13 @@ import scroll2 from '../assets/imges/scroll-2.png';
 import scroll3 from '../assets/imges/scroll-3.png';
 import scroll4 from '../assets/imges/scroll-4.png';
 import scroll5 from '../assets/imges/scroll-5.png';
-import BreadCrumb from '../Components/BreadCrumbComponent/BreadCrumb';
-import { HorizentalCard } from '../Components/HorizentalCardComponent/HorizentalCard';
-import PageHeader from '../Components/PageHeaderComponent/PageHeader';
-import { ScrollCard } from '../Components/ScrollCardComponent/ScrollCard';
-import { SectionWrapper } from '../Components/SectionWrapperComponent/SectionWrapper';
-import { Slider } from '../Components/SliderComponent/Slider';
-import SubscribtionForm from '../Components/SubscribtionFormComponent/SubscribtionForm';
+import BreadCrumb from '../Components/BreadCrumb';
+import { HorizentalCard } from '../Components/HorizentalCard';
+import PageHeader from '../Components/PageHeader';
+import { ScrollCard } from '../Components/ScrollCard';
+import { SectionWrapper } from '../Components/SectionWrapper';
+import { Slider } from '../Components/Slider';
+import SubscribtionForm from '../Components/SubscribtionForm';
 import './PopularPage.scss';
 
 const PopularPage: React.FC = () => {

@@ -1,7 +1,7 @@
 import React from 'react'
-import BreadCrumb from '../Components/BreadCrumbComponent/BreadCrumb'
-import PageHeader from '../Components/PageHeaderComponent/PageHeader'
-import { HorizentalCard } from '../Components/HorizentalCardComponent/HorizentalCard'
+import BreadCrumb from '../Components/BreadCrumb'
+import PageHeader from '../Components/PageHeader'
+import { HorizentalCard } from '../Components/HorizentalCard'
 import horizontalImg from '../assets/imges/horizontal.png'
 
 import './ReadingListsPage.scss'

@@ -1,8 +1,8 @@
 import React from 'react'
 import { FcDocument } from 'react-icons/fc'
-import BreadCrumb from '../Components/BreadCrumbComponent/BreadCrumb'
-import PageHeader from '../Components/PageHeaderComponent/PageHeader'
-import { TextCard } from '../Components/TextCardComponent/TextCard'
+import BreadCrumb from '../Components/BreadCrumb'
+import PageHeader from '../Components/PageHeader'
+import { TextCard } from '../Components/TextCard'
 import './TopicsPage.scss'
 
 const TopicsPage: React.FC = () => {
