@@ -1,10 +1,5 @@
 import React from 'react';
-import Card2Img from '../assets/imges/Card-2.png';
-import scroll1 from '../assets/imges/scroll-1.png';
-import scroll2 from '../assets/imges/scroll-2.png';
-import scroll3 from '../assets/imges/scroll-3.png';
-import scroll4 from '../assets/imges/scroll-4.png';
-import scroll5 from '../assets/imges/scroll-5.png';
+import { BounceLoader } from 'react-spinners';
 import BreadCrumb from '../Components/BreadCrumb';
 import { HorizentalCard } from '../Components/HorizentalCard';
 import PageHeader from '../Components/PageHeader';
@@ -12,96 +7,86 @@ import { ScrollCard } from '../Components/ScrollCard';
 import { SectionWrapper } from '../Components/SectionWrapper';
 import { Slider } from '../Components/Slider';
 import SubscribtionForm from '../Components/SubscribtionForm';
+import usePopularPosts from '../utils/usePopularPosts';
+import useReadingList from '../utils/useReadingList';
 import './PopularPage.scss';
 
 const PopularPage: React.FC = () => {
-    return (
-        <div className='page popular-Page'>
-            <div className="wrapper white-bg">
-                <div className="container">
-                    <PageHeader
-                        title='Popular'
-                        description='Check out the most-read and most-shared posts from the 3layers blog.'
-                    />
-                </div>
-            </div>
-            <div className="wrapper">
-                <BreadCrumb />
-                <section className="container cards-container">
-                    <HorizentalCard
-                        img={Card2Img}
-                        text={{
-                            number: '01',
-                            title: '5 Things More Important for Your Content Than Content-Length in 2018',
-                            description: 'User research is the reality check every project needs. Here’s our guide to why you should be doing it — and how to get started.'
-                        }}
-                    />
-                    <HorizentalCard
-                        img={Card2Img}
-                        text={{
-                            number: '01',
-                            title: '5 Things More Important for Your Content Than Content-Length in 2018',
-                            description: 'User research is the reality check every project needs. Here’s our guide to why you should be doing it — and how to get started.'
-                        }}
-                    />
-                    <HorizentalCard
-                        img={Card2Img}
-                        text={{
-                            number: '01',
-                            title: '5 Things More Important for Your Content Than Content-Length in 2018',
-                            description: 'User research is the reality check every project needs. Here’s our guide to why you should be doing it — and how to get started.'
-                        }}
-                    />
-                    <HorizentalCard
-                        img={Card2Img}
-                        text={{
-                            number: '01',
-                            title: '5 Things More Important for Your Content Than Content-Length in 2018',
-                            description: 'User research is the reality check every project needs. Here’s our guide to why you should be doing it — and how to get started.'
-                        }}
-                    />
-                    <HorizentalCard
-                        img={Card2Img}
-                        text={{
-                            number: '01',
-                            title: '5 Things More Important for Your Content Than Content-Length in 2018',
-                            description: 'User research is the reality check every project needs. Here’s our guide to why you should be doing it — and how to get started.'
-                        }}
-                    />
-                    <HorizentalCard
-                        img={Card2Img}
-                        text={{
-                            number: '01',
-                            title: '5 Things More Important for Your Content Than Content-Length in 2018',
-                            description: 'User research is the reality check every project needs. Here’s our guide to why you should be doing it — and how to get started.'
-                        }}
-                    />
-                </section>
+  const { readinglists } = useReadingList();
+  const { posts: popularPosts, loading } = usePopularPosts(10);
 
-                <section className="container">
-                    <SectionWrapper
-                        title='Reading lists'
-                        separator={false}
-                        link={{
-                            text: 'View all',
-                            to: '/reading-list'
-                        }}
-                    >
-                        <Slider>
-                            <ScrollCard img={scroll1} text='UI design' />
-                            <ScrollCard img={scroll2} text='UX design' />
-                            <ScrollCard img={scroll3} text='SEO' />
-                            <ScrollCard img={scroll4} text='Popular' />
-                            <ScrollCard img={scroll5} text='Essentials' />
-                        </Slider>
-                    </SectionWrapper>
-                </section>
-
-                <SubscribtionForm />
-
-            </div>
+  return (
+    <div className="page popular-Page">
+      {loading === true ? (
+        <div
+          style={{
+            height: '100vh',
+            width: '100vw',
+            backgroundColor: 'white',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            zIndex: 10000000,
+          }}
+        >
+          <BounceLoader
+            color="#36d7b7"
+            style={{
+              position: 'fixed',
+              top: '50%',
+              left: '50%',
+            }}
+          />
         </div>
-    )
-}
+      ) : (
+        <>
+          <div className="wrapper white-bg">
+            <div className="container">
+              <PageHeader
+                title="Popular"
+                description="Check out the most-read and most-shared posts from the 3layers blog."
+              />
+            </div>
+          </div>
+          <div className="wrapper">
+            <BreadCrumb />
+            <section className="container cards-container">
+              {popularPosts.map((post) => (
+                <HorizentalCard
+                  key={post.id}
+                  img={post.image}
+                  text={{
+                    number: String(post.views),
+                    title: post.title,
+                    description: post.body,
+                  }}
+                />
+              ))}
+            </section>
 
-export default PopularPage
+            <section className="container">
+              <SectionWrapper
+                title="Reading lists"
+                separator={false}
+                link={{
+                  text: 'View all',
+                  to: '/reading-list',
+                }}
+              >
+                <Slider>
+                  {readinglists.map((reading) => (
+                    <ScrollCard img={reading.photo} text={reading.name} />
+                  ))}
+                </Slider>
+              </SectionWrapper>
+            </section>
+
+            <SubscribtionForm />
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
+export default PopularPage;

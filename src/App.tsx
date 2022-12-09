@@ -13,28 +13,34 @@ import SingleBlogPage from './Pages/SingleBlogPage';
 import AuthorPage from './Pages/AuthorPage';
 
 const App: React.FC = () => {
-    const { pathname } = useLocation();
+  const { pathname } = useLocation();
 
-    return (
-        <div className="App">
-            <div className={`wrapper ${pathname != '/subscribe' && pathname != '/author' && pathname != '/' ? 'white-bg' : ''}`}>
-                <Nav />
-            </div>
-            <Routes>
-                <Route path='/' index element={<HomePage />} />
-                <Route path='/popular' element={<PopularPage />} />
-                <Route path='/popular/page/t' element={<PopularPage />} />
-                <Route path='/new' element={<NewPage />} />
-                <Route path='/reading-list' element={<ReadingListsPage />} />
-                <Route path='/topics' element={<TopicsPage />} />
-                <Route path='/subscribe' element={<SubscribtionForm />} />
-                <Route path='/single-blog' element={<SingleBlogPage />} />
-                <Route path='/author' element={<AuthorPage />} />
-            </Routes>
+  return (
+    <div className="App">
+      <div
+        className={`wrapper ${
+          pathname != '/subscribe' && pathname != '/author' && pathname != '/'
+            ? 'white-bg'
+            : ''
+        }`}
+      >
+        <Nav />
+      </div>
+      <Routes>
+        <Route path="/" index element={<HomePage />} />
+        <Route path="/popular" element={<PopularPage />} />
+        <Route path="/popular/page/t" element={<PopularPage />} />
+        <Route path="/new" element={<NewPage />} />
+        <Route path="/reading-list" element={<ReadingListsPage />} />
+        {/* <Route path='/topics' element={<TopicsPage />} /> */}
+        <Route path="/subscribe" element={<SubscribtionForm />} />
+        <Route path="/single-blog" element={<SingleBlogPage />} />
+        <Route path="/author" element={<AuthorPage />} />
+      </Routes>
 
-            <Footer />
-        </div>
-    );
-}
+      <Footer />
+    </div>
+  );
+};
 
 export default App;

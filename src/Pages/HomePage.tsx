@@ -1,189 +1,168 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import cardImg from '../assets/imges/Pic.png';
-import scroll1 from '../assets/imges/scroll-1.png';
-import scroll2 from '../assets/imges/scroll-2.png';
-import scroll3 from '../assets/imges/scroll-3.png';
-import scroll4 from '../assets/imges/scroll-4.png';
-import scroll5 from '../assets/imges/scroll-5.png';
-import smallCardImg from '../assets/imges/Card.png';
-import Card2Img from '../assets/imges/Card-2.png';
-import VCard1Img from '../assets/imges/Card-1.png';
-import VCard2Img from '../assets/imges/Card2.png';
-import horizontalImg from '../assets/imges/horizontal.png';
-import { CardWidth } from '../interfaces/IImageCardProps';
+import { BounceLoader } from 'react-spinners';
+import { HorizentalCard } from '../Components/HorizentalCard';
 import { ImageCard } from '../Components/ImageCard';
 import { ScrollCard } from '../Components/ScrollCard';
 import { SectionWrapper } from '../Components/SectionWrapper';
 import { Slider } from '../Components/Slider';
-import './HomePage.scss';
 import { TextCard } from '../Components/TextCard';
-import { HorizentalCard } from '../Components/HorizentalCard';
 import VerticalCard from '../Components/VerticalCard';
-
+import { CardWidth } from '../interfaces/IImageCardProps';
+import IReadingList from '../interfaces/IReadingList';
+import useNewPosts from '../utils/useNewPosts';
+import usePopularPosts from '../utils/usePopularPosts';
+import useReadingList from '../utils/useReadingList';
+import './HomePage.scss';
 
 export const HomePage: React.FC = () => {
-    return (
-        <div className="home-page">
-            <div className="wrapper">
-                <div className="container">
-                    <div className="hero">
-                        <ImageCard
-                            width={CardWidth.LARGE}
-                            img={cardImg}
-                            text={{
-                                author: 'TOMAS LAURINAVICIUS',
-                                category: 'INSPIRATION',
-                                title: 'How to accept rejection gracefully — and use it to grow',
-                                description: 'User research is the reality check every project needs. Here’s our guide to why you should be doing it — and how to get started.'
-                            }}
-                        />
-                        <SectionWrapper
-                            width='40%'
-                            title='New'
-                            separator={true}
-                            titleCName='quote'
-                            link={{ text: 'View all new', to: '/new' }}
-                        >
-                            <div className="new-card">
-                                <p className="date">SEP  04  2018</p>
-                                <Link
-                                    to="/"
-                                    className="title-small news"
-                                >
-                                    Web page layout 101: website anatomy every designer needs to learn
-                                </Link>
-                            </div>
-                            <div className="new-card">
-                                <p className="date">SEP  04  2018</p>
-                                <Link
-                                    to="/"
-                                    className="title-small news"
-                                >
-                                    Web page layout 101: website anatomy every designer needs to learn
-                                </Link>
-                            </div>
-                            <div className="new-card">
-                                <p className="date">SEP  04  2018</p>
-                                <Link
-                                    to="/"
-                                    className="title-small news"
-                                >
-                                    Our 15 favorite websites from August 2018
-                                </Link>
-                            </div>
-                            <div className="new-card">
-                                <p className="date">SEP  04  2018</p>
-                                <Link
-                                    to="/"
-                                    className="title-small news"
-                                >
-                                    Our 15 favorite websites from August 2018
-                                </Link>
-                            </div>
-                        </SectionWrapper>
-                    </div>
+  const { readinglists } = useReadingList();
+  const { posts: popularPosts } = usePopularPosts(8);
+  const { posts, loading, error } = useNewPosts(5);
 
-                    <section className="container">
-                        <SectionWrapper
-                            title='Reading lists'
-                            separator={false}
-                            link={{
-                                text: 'View all',
-                                to: '/reading-list'
-                            }}
-                        >
-                            <Slider>
-                                <ScrollCard img={scroll1} text='UI design' />
-                                <ScrollCard img={scroll2} text='UX design' />
-                                <ScrollCard img={scroll3} text='SEO' />
-                                <ScrollCard img={scroll4} text='Popular' />
-                                <ScrollCard img={scroll5} text='Essentials' />
-                            </Slider>
-                        </SectionWrapper>
-                    </section>
-
-                    <section className='container'>
-                        <SectionWrapper
-                            separator={false}
-                            title='Popular'
-                            link={{ to: '/popular', text: 'View all' }}
-                        >
-                            <div className='cards-section'>
-                                <ImageCard
-                                    width={CardWidth.SMALL}
-                                    img={smallCardImg}
-                                    text={{
-                                        author: 'TOMAS LAURINAVICIUS',
-                                        category: 'DESIGN PROCESS',
-                                        title: 'Web page layout 101: website anatomy every designer needs to learn', description: 'User research is the reality check every project needs. Here’s our guide to why you should be doing it — and how to get started.'
-                                    }} />
-                                <div className="text-cards-container">
-                                    <TextCard description='Affiliate Systems Suck, So We Rolled Our Own' title='FREELANCING' />
-                                    <TextCard title='RESOURCE' description='How not to design web forms' />
-                                    <TextCard title='DESIGN PROCESS' description='B2B Lead Generation – Tips and Strategies for 2018' />
-                                    <TextCard title='INSPIRATION' description='8 Best WordPress Ecommerce Plugins' />
-                                </div>
-                            </div>
-                        </SectionWrapper>
-                    </section>
-
-                    <section className="container">
-                        <SectionWrapper title='Random' separator={false}>
-                            <HorizentalCard img={horizontalImg} text={{
-                                author: 'TOMAS LAURINAVICIUS',
-                                category: 'TUTORIALS',
-                                description: 'User research is the reality check every project needs. Here’s our guide to why you should be doing it — and how to get started.',
-                                title: 'Mind-Blowing Twitter Stats and Facts on Our Favorite Network (2018)'
-                            }} />
-                        </SectionWrapper>
-                    </section>
-
-                    <section className='container'>
-                        <SectionWrapper
-                            separator={false}
-                            title='Essentials'
-                            link={{ to: '/popular', text: 'View all' }}
-                        >
-                            <div className='cards-section'>
-                                <div className="text-cards-container">
-                                    <TextCard description='Affiliate Systems Suck, So We Rolled Our Own' title='FREELANCING' />
-                                    <TextCard title='RESOURCE' description='How not to design web forms' />
-                                    <TextCard title='DESIGN PROCESS' description='B2B Lead Generation – Tips and Strategies for 2018' />
-                                    <TextCard title='INSPIRATION' description='8 Best WordPress Ecommerce Plugins' />
-                                </div>
-                                <ImageCard
-                                    width={CardWidth.SMALL}
-                                    img={Card2Img}
-                                    text={{
-                                        author: 'TOMAS LAURINAVICIUS',
-                                        category: 'DESIGN PROCESS',
-                                        title: 'How to Fix the WordPress HTTP Error (Uploading Images to Media Library)',
-                                        description: 'User research is the reality check every project needs. Here’s our guide to why you should be doing it — and how to get started.'
-                                    }} />
-                            </div>
-                        </SectionWrapper>
-                    </section>
-
-                    <section className="container vertical-cards-container" >
-                        <VerticalCard
-                            img={VCard1Img}
-                            text={{
-                                author: 'TOMAS LAURINAVICIUS',
-                                category: 'RESOURCE',
-                                description: 'User research is the reality check every project needs. Here’s our guide to why you should be doing it — and how to get started.',
-                                title: 'Website Downtime: Applicable Tips on How to Prevent It'
-                            }} />
-                        <VerticalCard img={VCard2Img} text={{
-                            author: 'TOMAS LAURINAVICIUS',
-                            category: 'RESOURCE',
-                            description: 'User research is the reality check every project needs. Here’s our guide to why you should be doing it — and how to get started.',
-                            title: 'Website Downtime: Applicable Tips on How to Prevent It'
-                        }} />
-                    </section>
-
-                </div>
-            </div>
+  return (
+    <div className="home-page">
+      {loading === true ? (
+        <div
+          style={{
+            height: '100vh',
+            width: '100vw',
+            backgroundColor: 'white',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            zIndex: 10000000,
+          }}
+        >
+          <BounceLoader
+            color="#36d7b7"
+            style={{
+              position: 'fixed',
+              top: '50%',
+              left: '50%',
+            }}
+          />
         </div>
-    )
-}
+      ) : (
+        <div className="wrapper">
+          <div className="container">
+            <div className="hero">
+              <ImageCard
+                width={CardWidth.LARGE}
+                img={posts[0]?.image}
+                text={{
+                  author: posts[0]?.user.name,
+                  category: posts[0]?.category.name,
+                  title: posts[0]?.title,
+                  description: posts[0]?.body,
+                }}
+              />
+              <SectionWrapper
+                width="40%"
+                title="New"
+                separator={true}
+                titleCName="quote"
+                link={{ text: 'View all new', to: '/new' }}
+              >
+                {posts.slice(1).map((post) => (
+                  <div className="new-card" key={post.id}>
+                    <p className="date">{post.date.toString()}</p>
+                    <Link to={`/post/${post.id}`} className="title-small news">
+                      {post.title}
+                    </Link>
+                  </div>
+                ))}
+              </SectionWrapper>
+            </div>
+
+            <section className="container">
+              <SectionWrapper
+                title="Reading lists"
+                separator={false}
+                link={{
+                  text: 'View all',
+                  to: '/reading-list',
+                }}
+              >
+                <Slider>
+                  {readinglists.map((readingList: IReadingList) => (
+                    <ScrollCard
+                      img={readingList.photo}
+                      text={readingList.name}
+                      key={readingList.id}
+                    />
+                  ))}
+                </Slider>
+              </SectionWrapper>
+            </section>
+
+            <section className="container">
+              <SectionWrapper
+                separator={false}
+                title="Popular"
+                link={{ to: '/popular', text: 'View all' }}
+              >
+                <div className="cards-section">
+                  <ImageCard
+                    width={CardWidth.SMALL}
+                    img={popularPosts[0]?.image}
+                    text={{
+                      author: popularPosts[0]?.user?.name,
+                      category: popularPosts[0]?.category.name,
+                      title: popularPosts[0]?.title,
+                      description: popularPosts[0]?.body,
+                    }}
+                  />
+                  <div className="text-cards-container">
+                    {popularPosts.slice(1, 5).map((post) => (
+                      <TextCard
+                        key={post.id}
+                        description={post.title}
+                        title={post.category?.name}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </SectionWrapper>
+            </section>
+
+            <section className="container">
+              <SectionWrapper title="Random" separator={false}>
+                <HorizentalCard
+                  img={popularPosts[5]?.image}
+                  text={{
+                    author: popularPosts[5]?.user.name,
+                    category: popularPosts[5]?.category.name,
+                    description: popularPosts[5]?.body,
+                    title: popularPosts[5]?.title ?? '',
+                  }}
+                />
+              </SectionWrapper>
+            </section>
+
+            <section className="container vertical-cards-container">
+              <VerticalCard
+                img={popularPosts[6]?.image}
+                text={{
+                  author: popularPosts[6]?.user.name,
+                  category: popularPosts[6]?.category.name,
+                  description: popularPosts[6]?.body,
+                  title: popularPosts[6]?.title,
+                }}
+              />
+              <VerticalCard
+                img={popularPosts[7]?.image}
+                text={{
+                  author: popularPosts[7]?.user.name,
+                  category: popularPosts[7]?.category.name,
+                  description: popularPosts[7]?.body,
+                  title: popularPosts[7]?.title,
+                }}
+              />
+            </section>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
